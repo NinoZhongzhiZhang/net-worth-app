@@ -11,13 +11,7 @@ var bodyParser = require('body-parser'); //Ensure our body-parser tool has been 
 app.use(bodyParser.json());              // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
-const dbConfig = {
-  host: 'localhost',
-  port: 5432,
-  database: 'net_worth_db',
-  user: 'postgres',
-  password: 'XIAOxiao1998!'
-};
+const dbConfig = process.env.DATABASE_URL;
 
 var db = pgp(dbConfig);
 
